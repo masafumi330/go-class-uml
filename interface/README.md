@@ -3,6 +3,10 @@
 - Animal は抽象クラス（インターフェース）で、それを実現（実装、満たす）するクラスが、具象クラスのDog, Cat
 
 ```mermaid
+---
+title: インターフェースの例
+---
+
 classDiagram
     class Animal {
         <<interface>>
