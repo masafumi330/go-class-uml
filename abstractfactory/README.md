@@ -16,29 +16,29 @@ classDiagram
         -factory ISportsFactory
     }
 
-    Usecase ..|> ISportsFactory : "nikeFactory = factory.GetSportsFactory('nike')"
+    Usecase ..|> ISportsFactory : "nikeFactory = factory.NewSportsFactory('nike')"
 
     class ISportsFactory {
         <<interface>>
-        makeShoe() IShoe
-        makeShirt() IShirt
+        MakeShoe() IShoe
+        MakeShirt() IShirt
     }
 
-    namespace 具象ファクトリー {
+
         class Adidas {
-            makeShoe() IShoe
-            makeShirt() IShirt
+            MakeShoe() IShoe
+            MakeShirt() IShirt
         }
         class Nike {
-            makeShoe() IShoe
-            makeShirt() IShirt
+            MakeShoe() IShoe
+            MakeShirt() IShirt
         }
-    }
+
 
     ISportsFactory <|.. Adidas
     ISportsFactory <|.. Nike
 
-    namespace 具象プロダクト {
+
         class AdidasShoe {
             
         }
@@ -49,24 +49,22 @@ classDiagram
         }
         class NikeShirt {
         }
-    }
 
-    namespace 抽象プロダクト {
+    
         class IShoe {
             <<interface>>
-            -setLogo(string)
-            -setSize(int)
-            -getLogo() string
-            -getSize() int
+            +SettLogo(string)
+            +SetSize(int)
+            +GetLogo() string
+            +GetSize() int
         }
         class IShirt {
             <<interface>>
-            -setLogo(string)
-            -setSize(int)
-            -getLogo() string
-            -getSize() int
+            +SetLogo(string)
+            +SetSize(int)
+            +GetLogo() string
+            +GetSize() int
         }
-    }
 
     Nike ..> NikeShoe
     Nike ..> NikeShirt
@@ -76,18 +74,18 @@ classDiagram
     class Shoe {
         -logo string
         -size int
-        -setLogo(string)
-        -setSize(int)
-        -getLogo() string
-        -getSize() int
+        +SetLogo(string)
+        +SetSize(int)
+        +GetLogo() string
+        +GetSize() int
     }
     class Shirt {
         -logo string
         -size int
-        -setLogo(string)
-        -setSize(int)
-        -getLogo() string
-        -getSize() int
+        +SetLogo(string)
+        +SetSize(int)
+        +GetLogo() string
+        +GetSize() int
     }
 
     NikeShoe *.. Shoe
